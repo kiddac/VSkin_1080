@@ -582,6 +582,14 @@ self.instance.move(ePoint((desktop_w-wsizex)//2, (desktop_h-wsizey)//2))</applet
 		<panel name="OKButton" />
 	</screen>
 	
+	<screen name="SkinSelection" position="0,0" size="1920,1080" title="Skin Selection" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="Setup"/>
+		<widget name="Image" position="0,0" size="0,0" alphatest="blend" conditional="Image" transparent="1" zPosition="2" />
+		<widget name="preview" position="1380,750" size="324,243" alphatest="blend" conditional="preview" transparent="1" zPosition="3" />
+	</screen>
+	
+	
+	
 	<!-- SleepTimerEdit via standby menu -->
 	<!-- /lib/python/Screens/SleepTimerEdit.py -->
 	<screen name="SleepTimerEdit" position="center,center" size="750,210" title="Sleep Timer" backgroundColor="messageboxbg">
