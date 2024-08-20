@@ -681,5 +681,35 @@ self.instance.move(ePoint((desktop_w-wsizex)//2, (desktop_h-wsizey)//2))</applet
 	<screen name="Subtitles" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder" zPosition="-1">
 		<panel name="Setup-Default" />
 	</screen>
+	
+	<screen name="OSDCalibration" title="OSD Calibration" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#000000">
+		<widget source="text" render="Label" position="300,165" zPosition="1" size="1320,180" valign="center" font="Regular;30" halign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" />
+		<widget name="config" position="225,375" zPosition="1" size="1470,315" itemHeight="45" font="Regular;30" secondfont="Regular;30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColorSelected="#670004" foregroundColorSelected="#ffffff" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" /> 
+		<widget name="description" position="300,713" zPosition="1" size="1320,120" font="Regular;30" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" conditional="description"/>
+		<widget source="status" render="Label" position="300,713" zPosition="1" size="1320,120" font="Regular;30" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" conditional="status"/>
+		<eLabel backgroundColor="red" position="0,0" size="1920,1" zPosition="0" />
+		<eLabel backgroundColor="red" position="0,1079" size="1920,1" zPosition="0" />
+		<eLabel backgroundColor="red" position="0,0" size="1,1080" zPosition="0" />
+		<eLabel backgroundColor="red" position="1919,0" size="1,1080" zPosition="0" />
+		<eLabel backgroundColor="green" position="38,38" size="1845,1" zPosition="0" />
+		<eLabel backgroundColor="green" position="38,1041" size="1845,1" zPosition="0" />
+		<eLabel backgroundColor="green" position="38,38" size="1,1005" zPosition="0" />
+		<eLabel backgroundColor="green" position="1881,38" size="1,1005" zPosition="0" />
+		<eLabel backgroundColor="yellow" position="75,75" size="1770,1" zPosition="0" />
+		<eLabel backgroundColor="yellow" position="75,1004" size="1770,1" zPosition="0" />
+		<eLabel backgroundColor="yellow" position="75,75" size="1,930" zPosition="0" />
+		<eLabel backgroundColor="yellow" position="1844,75" size="1,930" zPosition="0" />
+		<eLabel backgroundColor="blue" position="113,113" size="1695,1" zPosition="0" />
+		<eLabel backgroundColor="blue" position="113,966" size="1695,1" zPosition="0" />
+		<eLabel backgroundColor="blue" position="113,113" size="1,855" zPosition="0" />
+		<eLabel backgroundColor="blue" position="1806,113" size="1,855" zPosition="0" />
+		<ePixmap pixmap="buttons/key_red.png" position="500,870" size="53,42" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_green.png" position="774,870" size="53,42" alphatest="blend" />
+		<ePixmap pixmap="buttons/key_yellow.png" position="1049,870" size="53,42" alphatest="blend" />
+		<widget source="key_red" render="Label" position="563,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
+		<widget source="key_green" render="Label" position="837,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
+		<widget source="key_yellow" render="Label" position="1112,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
+		<widget name="footnote" position="0,0" size="0,0" conditional="footnote"/>
+	</screen>
 </skin>
 
