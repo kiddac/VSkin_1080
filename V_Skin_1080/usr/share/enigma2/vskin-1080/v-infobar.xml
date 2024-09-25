@@ -189,8 +189,6 @@
 	<screen name="SecondInfoBarECM" flags="wfNoBorder" position="0,0" size="1920,1080" title="InfoBar" backgroundColor="transparent">
 		<panel name="SecondInfoBar"/>
 	</screen>
-	<!-- not used in this skin so hidden -->
-	<screen name="RadioInfoBar" position="0,0" size="0,0" backgroundColor="black" flags="wfNoBorder"/>
 	<!-- quick epg info bar - Infobar Menu option single epg < > -->
 	<screen name="quickepg-header">
 		<ePixmap pixmap="v-infobars/header.png" position="0,0" size="1701,75" alphatest="blend" zPosition="1"/>

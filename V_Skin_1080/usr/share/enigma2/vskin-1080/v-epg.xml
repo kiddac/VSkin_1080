@@ -125,9 +125,9 @@
 		<!-- sky tabs -->
 		<ePixmap pixmap="v-backgrounds/black80.png" position="0,393" size="1920,57" alphatest="blend"/>
 		<widget source="Title" render="Label" position="23,393" size="300,57" font="Regular;39" foregroundColor="fg1" backgroundColor="infobarBlack" valign="center" transparent="1" noWrap="1" zPosition="1"/>
-		<widget name="tabsrow" position="0,393" size="1920,57" backgroundColor="#000000" transparent="0"/>
-		<widget name="firsttab" position="0,0" size="0,0" font="Bold;36" foregroundColor="white" backgroundColor="selected-text-bg" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/>
-		<widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="#000000" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/>
+		<!-- <widget name="tabsrow" position="0,393" size="1920,57" backgroundColor="#000000" transparent="0"/> -->
+		<!-- <widget name="firsttab" position="0,0" size="0,0" font="Bold;36" foregroundColor="white" backgroundColor="selected-text-bg" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/> -->
+		<!-- <widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="#000000" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/> -->
 		<!-- timeline background -->
 		<eLabel position="0,450" size="1920,2" backgroundColor="timelinetop" transparent="0" zPosition="2"/>
 		<eLabel position="0,452" size="1920,56" backgroundColor="infobarBlack" transparent="0" zPosition="1"/>
@@ -194,9 +194,9 @@
 		<!-- sky tabs -->
 		<ePixmap pixmap="v-backgrounds/black80.png" position="0,21" size="1920,57" alphatest="blend"/>
 		<widget source="Title" render="Label" position="23,21" size="300,57" font="Regular;39" foregroundColor="fg1" backgroundColor="infobarBlack" valign="center" transparent="1" noWrap="1" zPosition="1"/>
-		<widget name="tabsrow" position="0,21" size="1920,57" backgroundColor="#000000" transparent="0"/>
-		<widget name="firsttab" position="0,0" size="0,0" font="Bold;36" foregroundColor="white" backgroundColor="selected-text-bg" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/>
-		<widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="#000000" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/>
+		<!-- <widget name="tabsrow" position="0,21" size="1920,57" backgroundColor="#000000" transparent="0"/> -->
+		<!-- <widget name="firsttab" position="0,0" size="0,0" font="Bold;36" foregroundColor="white" backgroundColor="selected-text-bg" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/> -->
+		<!-- <widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="#000000" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/> -->
 		<!-- timeline background -->
 		<!-- <ePixmap pixmap="epg/TimeLineBG.png" position="0,78" size="1920,57" alphatest="blend" zPosition="3" /> -->
 		<eLabel position="0,78" size="1920,2" backgroundColor="timelinetop" transparent="0" zPosition="2"/>

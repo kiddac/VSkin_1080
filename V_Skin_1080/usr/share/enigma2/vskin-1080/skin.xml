@@ -23,9 +23,6 @@
 	<include filename="v-infobar.xml"/>
 	<include filename="v-plugins.xml"/>
 	<include filename="v-network.xml"/>
-	<include filename="v-general.xml"/>
-	<include filename="v-CCcamInfo.xml"/>
-	<include filename="v-information.xml"/>
 	<!-- <include filename="v-vix.xml" />  -->
 	<include filename="extras.xml"/>
 	<!-- fonts -->
