@@ -130,11 +130,7 @@
 	<screen name="PluginManagerHelp" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
 		<panel name="PluginManagerInfo"/>
 	</screen>
-	<!-- Backup Image-->
-	<screen name="ImageBackup" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
-		<panel name="Setup-Default"/>
-		<widget source="description" render="Label" position="1383,428" size="417,653" font="Regular;36" foregroundColor="fg1" backgroundColor="bg-mr" transparent="1"/>
-	</screen>
+
 	<!-- software management - install local extension -->
 	<screen name="IpkgInstaller" position="0,0" size="1920,1080" title="Install extensions" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="v-template2-pig"/>

@@ -66,7 +66,7 @@
 		<ePixmap pixmap="v-buttons/key_menu.png" position="1745,1002" size="57,45" alphatest="blend" zPosition="3"/>
 		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(63)</applet>
 	</screen>
-	<screen name="ImageBackup" position="0,0" size="1920,1080" title="Image Manager" flags="wfNoBorder" backgroundColor="transparent">
+	<screen name="VIXImageBackup" position="0,0" size="1920,1080" title="Image Manager" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="v-template2-pig"/>
 		<widget name="lab1" position="129,215" size="1185,113" font="Regular;38" foregroundColor="fg1" backgroundColor="bg-mm-dark" halign="left" valign="top" transparent="1" zPosition="1"/>
 		<widget name="list" textOffset="15,3" position="129,345" size="1193,630" font="Regular;33" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-42-1280-square.png" itemHeight="63" valign="center" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2"/>
@@ -110,9 +110,22 @@
 		<widget name="text" position="0,400" size="900,108" font="Regular;33"/>
 		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(75)</applet>
 	</screen>
-	<screen name="ChoiceBox" position="center,center" size="900,720" zPosition="5">
+	<screen name="HelpMenuVIX" position="fill" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="v-template2-nopig"/>
+		<widget name="list" textOffset="15,12" position="129,216" size="1193,756" font="Regular;39" foregroundColor="fg1" backgroundColor="bg-mm-dark" foregroundColorSelected="selected" backgroundColorSelected="selected-gfx-bg" selectionPixmap="v-selectbars/selectbar-42-1280-square.png" backgroundPixmap="v-selectbars/selectbar-bg.png" itemHeight="63" enableWrapAround="1" scrollbarMode="showNever" transparent="1" zPosition="2"/>
+		<widget name="long_key" position="1344,1002" size="576,60" font="Regular;32" foregroundColor="fg2" backgroundColor="bg-mr" halign="center" transparent="1"/>
+		<panel name="RemoteControlTemplate"/>
+	</screen>
+	<screen name="VIXDevicesPanel" position="0,0" size="1920,1080" title="Mount Manager" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="HddMount"/>
+	</screen>
+	<screen name="VIXDevicePanelConf" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder" zPosition="4" title="Choose where to mount your devices to:">
+		<panel name="DevicePanelConf"/>
+	</screen>
+	<screen name="VIXChoiceBox" position="center,center" size="900,720" zPosition="5">
 		<widget name="list" position="0,0" size="900,600" font="Regular;33" foregroundColor="fg1" foregroundColorSelected="selected" backgroundColor="bg-mm" backgroundColorSelected="selected-gfx-bg" enableWrapAround="1" transparent="1" scrollbarMode="showOnDemand" itemHeight="75"/>
 		<widget name="text" position="0,400" size="900,108" font="Regular;33"/>
+		<widget name="description" position="0,0" size="0,0"  font="Regular;33"/>
 		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(75)</applet>
 	</screen>
 </skin>
