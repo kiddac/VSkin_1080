@@ -7,19 +7,19 @@
 		<ePixmap pixmap="v-backgrounds/description-box-bg.png" position="0,0" alphatest="blend" size="1365,312" zPosition="-1"/>
 		<panel position="129,50" size="252,222">
 			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson1.jpg" position="0,0" size="252,189" alphatest="blend" zPosition="1"/>
-			<ePixmap pixmap="v-icons/tp-trending.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
+			<ePixmap pixmap="v-icons/tp-toppick.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
 		</panel>
 		<panel position="411,50" size="252,222">
 			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson2.jpg" position="0,0" size="252,189" alphatest="blend" zPosition="1"/>
-			<ePixmap pixmap="v-icons/tp-new.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
+			<ePixmap pixmap="v-icons/tp-trending.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
 		</panel>
 		<panel position="693,50" size="252,222">
 			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson3.jpg" position="0,0" size="252,189" alphatest="blend" zPosition="1"/>
-			<ePixmap pixmap="v-icons/tp-exclusive.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
+			<ePixmap pixmap="v-icons/tp-youmightlike.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
 		</panel>
 		<panel position="975,50" size="252,222">
 			<ePixmap pixmap="/usr/share/enigma2/vskin-gfx/whatson4.jpg" position="0,0" size="252,189" alphatest="blend" zPosition="1"/>
-			<ePixmap pixmap="v-icons/tp-epic.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
+			<ePixmap pixmap="v-icons/tp-watchnow.png" position="0,191" size="252,26" alphatest="blend" zPosition="1"/>
 		</panel>
 	</screen>
 	<screen name="vpig-bg">

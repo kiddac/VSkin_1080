@@ -126,7 +126,9 @@
 		<widget name="list" position="0,0" size="900,600" font="Regular;33" foregroundColor="fg1" foregroundColorSelected="selected" backgroundColor="bg-mm" backgroundColorSelected="selected-gfx-bg" enableWrapAround="1" transparent="1" scrollbarMode="showOnDemand" itemHeight="75"/>
 		<widget name="text" position="0,400" size="900,108" font="Regular;33"/>
 		<widget name="description" position="0,0" size="0,0"  font="Regular;33"/>
-		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(75)</applet>
+		<applet type="onLayoutFinish">self["list"].instance.setItemHeight(75)
+self.autoResize()
+</applet>
 	</screen>
 </skin>
 
