@@ -647,7 +647,8 @@ self["menu"].l.setFont(0, gFont("Regular", 33))</applet>
 		<widget name="icon" conditional="icon" position="15,0" size="53,53" pixmaps="icons/input_question.png,icons/input_info.png,icons/input_info.png,icons/input_error.png,icons/input_info.png" alphatest="blend" scale="1" transparent="1"/>
 		<widget name="text" position="0,0" size="870,0" font="Regular;33"/>
 		<widget name="list" position="0,0" size="870,0" conditional="list" font="Regular;33" textOffset="15,3" backgroundColor="messageboxbg" transparent="1" itemHeight="45"/>
-		<applet type="onLayoutFinish">from enigma import getDesktop, eSize, ePoint
+		<applet type="onLayoutFinish">
+from enigma import getDesktop, eSize, ePoint
 margin = 9 
 separator = 30
 desktop_w = getDesktop(0).size().width()
@@ -658,46 +659,56 @@ pixmapHeight = 53
 pixmapMargin = 45
 		
 textsize = (0, 0)
-if self["text"].text:
-	textsize = self["text"].getSize()
-	if textsize[0] &lt; textsize[1]:
-		textsize = (textsize[1], textsize[0] + 10)
+
+if "text" in self and self["text"].instance:
+    if self["text"].text:
+        textsize = self["text"].getSize()
+        if textsize[0] &lt; textsize[1]:
+            textsize = (textsize[1], textsize[0] + 10)
 				
 listcount = 0
-
-listLen = len(self.list)
+listLen = len(self.list) if hasattr(self, "list") and self.list is not None else 0
 listMaxItems = int(desktop_h * 0.8 - textsize[1]) // itemheight
 scrollbar = 10
 
-# maxWidth = desktop_w * 0.9
-# minWidth = desktop_w  // 2
+listWidth = 0
 
-listWidth = self["list"].instance.size().width()
-try:
-	listWidth = int(min(self["list"].instance.getMaxItemTextWidth() + scrollbar, desktop_w * 0.9))
-except Exception as e:
-	print(e)
+if "list" in self and self["list"].instance:
+    listWidth = self["list"].instance.size().width()
+    try:
+        listWidth = int(min(self["list"].instance.getMaxItemTextWidth() + scrollbar, desktop_w * 0.9))
+    except Exception as e:
+        print("Error getting list width:", e)
 
 count = min(listLen, listMaxItems)
+
 if textsize[1] and textsize[0] &lt; listWidth:
-	textsize = (listWidth, textsize[1])
+    textsize = (listWidth, textsize[1])
+	
 width = max(listWidth, textsize[0])
 listsize = (width, listMaxItems * itemheight)
 listPos = separator + (textsize[1] if textsize[1] &gt; 0 else 0)
+
 # resize label
-self["text"].instance.resize(eSize(*textsize))
-self["text"].instance.move(ePoint(margin + pixmapWidth + pixmapMargin, 0))
+if "text" in self and self["text"].instance:
+    self["text"].instance.resize(eSize(*textsize))
+    self["text"].instance.move(ePoint(margin + pixmapWidth + pixmapMargin, 0))
+	
 # move list
-self["list"].instance.resize(eSize(*listsize))
-self["list"].instance.move(ePoint(margin + pixmapWidth + pixmapMargin, listPos))
+if "list" in self and self["list"].instance:
+    self["list"].instance.resize(eSize(*listsize))
+    self["list"].instance.move(ePoint(margin + pixmapWidth + pixmapMargin, listPos))
 
 wsizex = margin * 2 + width + pixmapWidth + pixmapMargin
 wsizey = max(listPos + (count * itemheight) + margin, pixmapMargin * 2 + pixmapHeight)
 wsize = (wsizex, wsizey)
-self.instance.resize(eSize(*wsize))
 
-# center window
-self.instance.move(ePoint((desktop_w - wsizex) // 2, (desktop_h - wsizey) // 2))</applet>
+if self.instance:
+    self.instance.resize(eSize(*wsize))
+    # Center window
+    self.instance.move(ePoint((desktop_w - wsizex) // 2, (desktop_h - wsizey) // 2))
+</applet>
+
 	</screen>
 	<screen name="MessageBoxSimple" position="center,center" size="1002,15" title="Message" backgroundColor="messageboxbg">
 		<panel name="MessageBox"/>
@@ -1340,7 +1351,8 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 	<screen name="ATVChoiceBox" position="center,center" size="780,195" zPosition="5">
 		<widget name="text" position="0,0" size="780,0" font="Regular;33"/>
 		<widget name="list" position="0,0" size="780,0" font="Regular;33" foregroundColor="fg1" foregroundColorSelected="selected" backgroundColor="bg-mm" backgroundColorSelected="selected-gfx-bg" enableWrapAround="1" transparent="1" scrollbarMode="showOnDemand" itemHeight="75"/>
-		<applet type="onLayoutFinish">from enigma import getDesktop, eSize, ePoint	
+		<applet type="onLayoutFinish">
+from enigma import getDesktop, eSize, ePoint	
 margin = 0 
 separator = 75
 desktop_w = getDesktop(0).size().width()
@@ -1348,46 +1360,56 @@ desktop_h = getDesktop(0).size().height()
 itemheight = 75
 		
 textsize = (0, 0)
-if self["text"].text:
-	textsize = self["text"].getSize()
-	if textsize[0] &lt; textsize[1]:
-		textsize = (textsize[1], textsize[0] + 10)
-				
 
-listcount = 0
+# Ensure self["text"] exists before accessing its attributes
+if "text" in self and self["text"].instance:
+    if self["text"].text:
+        textsize = self["text"].getSize()
+        if textsize[0] &lt; textsize[1]:
+            textsize = (textsize[1], textsize[0] + 10)
 
-listLen = len(self.list)
+listLen = len(self.list) if hasattr(self, "list") and self.list is not None else 0
 listMaxItems = int(desktop_h * 0.8 - textsize[1]) // itemheight
 scrollbar = 10
 
-# maxWidth = desktop_w * 0.9
-# minWidth = desktop_w  // 2
+listWidth = 0
 
-listWidth = self["list"].instance.size().width()
-try:
-	listWidth = int(min(self["list"].instance.getMaxItemTextWidth() + scrollbar, desktop_w * 0.9))
-except Exception as e:
-	print(e)
+# Ensure self["list"] and its instance exist before accessing size
+if "list" in self and self["list"].instance:
+    listWidth = self["list"].instance.size().width()
+    try:
+        listWidth = int(min(self["list"].instance.getMaxItemTextWidth() + scrollbar, desktop_w * 0.9))
+    except Exception:
+        pass
 
 count = min(listLen, listMaxItems)
+
 if textsize[1] and textsize[0] &lt; listWidth:
-	textsize = (listWidth, textsize[1])
+    textsize = (listWidth, textsize[1])
+
 width = max(listWidth, textsize[0])
 listsize = (width, listMaxItems * itemheight)
 listPos = separator + textsize[1] if textsize[1] &gt; 0 else margin
-# resize label
-self["text"].instance.resize(eSize(*textsize))
-self["text"].instance.move(ePoint(margin, margin))
-# move list
-self["list"].instance.resize(eSize(*listsize))
-self["list"].instance.move(ePoint(margin, listPos))
+
+# Resize and move label safely
+if "text" in self and self["text"].instance:
+    self["text"].instance.resize(eSize(*textsize))
+    self["text"].instance.move(ePoint(margin, margin))
+
+# Resize and move list safely
+if "list" in self and self["list"].instance:
+    self["list"].instance.resize(eSize(*listsize))
+    self["list"].instance.move(ePoint(margin, listPos))
 
 wsizex = margin * 2 + width
 wsizey = listPos + (count * itemheight) + margin
 wsize = (wsizex, wsizey)
-self.instance.resize(eSize(*wsize))
 
-# center window
-self.instance.move(ePoint((desktop_w - wsizex) // 2, (desktop_h - wsizey) // 2))</applet>
+if self.instance:
+    self.instance.resize(eSize(*wsize))
+    # Center window
+    self.instance.move(ePoint((desktop_w - wsizex) // 2, (desktop_h - wsizey) // 2))
+</applet>
+
 	</screen>
 </skin>
